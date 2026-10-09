@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 """Кастомные виджеты AscoldIT: модель TableModel для TableView."""
-from PyQt6.QtCore import QAbstractTableModel, QModelIndex, Qt
+from app.utils.qt_compat import QAbstractTableModel, QModelIndex, Qt
 from qfluentwidgets import FluentIcon
 
 # Описание колонки: (ключ, заголовок, ширина)

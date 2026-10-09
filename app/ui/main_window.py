@@ -7,7 +7,7 @@
   Импорт/Экспорт
   Настройки
 """
-from PyQt6.QtGui import QFont
+from app.utils.qt_compat import QFont
 from qfluentwidgets import (
     FluentWindow, FluentIcon, InfoBarPosition,
     setTheme, Theme, InfoBar,

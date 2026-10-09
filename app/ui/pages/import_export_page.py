@@ -1,7 +1,6 @@
 # -*- coding: utf-8 -*-
 """Страница «Импорт/Экспорт»: все способы загрузки и выгрузки данных в одном месте."""
-from PyQt6.QtCore import Qt, pyqtSignal
-from PyQt6.QtWidgets import QWidget, QVBoxLayout, QHBoxLayout, QGridLayout, QApplication
+from app.utils.qt_compat import QApplication, QGridLayout, QHBoxLayout, QVBoxLayout, QWidget, Qt, pyqtSignal
 from qfluentwidgets import (
     CardWidget, IconWidget, SubtitleLabel, BodyLabel, StrongBodyLabel,
     PrimaryPushButton, PushButton, FluentIcon, InfoBar, InfoBarPosition,

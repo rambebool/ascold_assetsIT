@@ -3,12 +3,8 @@
 
 Универсальна для всех категорий (Компьютеры, МФУ, Принтеры, …, Склад).
 """
+from app.utils.qt_compat import QApplication, QDesktopServices, QDialog, QHBoxLayout, QHeaderView, QSortFilterProxyModel, QUrl, QVBoxLayout, QWidget, Qt, pyqtSignal
 import os
-from PyQt6.QtCore import Qt, QSortFilterProxyModel, pyqtSignal, QUrl
-from PyQt6.QtGui import QDesktopServices
-from PyQt6.QtWidgets import (
-    QWidget, QDialog, QVBoxLayout, QHBoxLayout, QHeaderView, QApplication,
-)
 from qfluentwidgets import (
     TableView, PushButton, PrimaryPushButton, SearchLineEdit, FluentIcon,
     InfoBar, InfoBarPosition, ComboBox, RoundMenu, Action, MessageBox,

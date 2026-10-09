@@ -3,11 +3,8 @@
 
 CRUD актива, обновление железа из WMI («Обновить железо»), таймлайн событий.
 """
+from app.utils.qt_compat import QDialog, QFormLayout, QHBoxLayout, QStackedWidget, QVBoxLayout, QWidget, Qt, pyqtSignal
 import json
-from PyQt6.QtCore import Qt, pyqtSignal
-from PyQt6.QtWidgets import (
-    QDialog, QWidget, QVBoxLayout, QHBoxLayout, QFormLayout, QStackedWidget,
-)
 from qfluentwidgets import (
     PushButton, PrimaryPushButton, LineEdit, ComboBox, TextEdit, FluentIcon,
     InfoBar, InfoBarPosition, SegmentedWidget, BodyLabel, SubtitleLabel,
@@ -280,7 +277,7 @@ class AssetDialog(QDialog):
             return
         self.btnWmi.setEnabled(False)
         self.btnWmi.setText("Запрос WMI…")
-        from PyQt6.QtWidgets import QApplication
+        from app.utils.qt_compat import QApplication
         QApplication.processEvents()
         try:
             from app.services.wmi_service import get_hardware_info, WMIServiceError

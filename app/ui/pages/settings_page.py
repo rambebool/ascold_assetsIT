@@ -1,9 +1,8 @@
 # -*- coding: utf-8 -*-
 """Страница «Настройки»: тема, шрифт, путь к БД, параметры Active Directory."""
+from app.utils.qt_compat import QFileDialog, QHBoxLayout, QVBoxLayout, QWidget, Qt, pyqtSignal
 from pathlib import Path
 
-from PyQt6.QtCore import Qt, pyqtSignal
-from PyQt6.QtWidgets import QWidget, QVBoxLayout, QHBoxLayout, QFileDialog
 from qfluentwidgets import (
     CardWidget, SubtitleLabel, BodyLabel, StrongBodyLabel, ComboBox, LineEdit,
     PushButton, PrimaryPushButton, SettingCardGroup, FluentIcon, InfoBar,

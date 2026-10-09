@@ -50,13 +50,13 @@ if _QT_BINDING == "pyqt5":
           "[--compile] (PyQt5-сборка). Переустановите корректно:\n"
           '    pip uninstall -y PyQt-Fluent-Widgets && pip install --no-deps '
           '--compile "PyQt6-Fluent-Widgets[full]"')
-    from PyQt5.QtCore import Qt
-    from PyQt5.QtGui import QFont
-    from PyQt5.QtWidgets import QApplication
+    from app.utils.qt_compat import Qt
+    from app.utils.qt_compat import QFont
+    from app.utils.qt_compat import QApplication
 else:
-    from PyQt6.QtCore import Qt
-    from PyQt6.QtGui import QFont
-    from PyQt6.QtWidgets import QApplication
+    from app.utils.qt_compat import Qt
+    from app.utils.qt_compat import QFont
+    from app.utils.qt_compat import QApplication
 
 from qfluentwidgets import setTheme, Theme
 
