@@ -90,7 +90,8 @@ class AssetDialog(QDialog):
         form.setSpacing(10)
         a = self.asset
 
-        self.edName = LineEdit(str(a.get("name", "")))
+        self.edName = LineEdit(None)
+        self.edName.setText(str(a.get("name", "")))
         self.edName.setPlaceholderText("Например: PC-BUH-01")
         self.cbType = ComboBox()
         for code, label in ASSET_TYPES.items():
@@ -102,7 +103,8 @@ class AssetDialog(QDialog):
         st = str(a.get("status", ASSET_STATUSES[0]))
         sidx = self.cbStatus.findText(st)
         self.cbStatus.setCurrentIndex(max(sidx, 0))
-        self.edLocation = LineEdit(str(a.get("location", "")))
+        self.edLocation = LineEdit(None)
+        self.edLocation.setText(str(a.get("location", "")))
         self.edLocation.setPlaceholderText("Корпус 1 / Этаж 2 / Кабинет 205")
 
         # пользователь: ФИО из справочника
@@ -116,13 +118,19 @@ class AssetDialog(QDialog):
         uidx = self.cbUser.findData(uid)
         self.cbUser.setCurrentIndex(max(uidx, 0))
 
-        self.edSerial = LineEdit(str(a.get("serial", "")))
-        self.edManufacturer = LineEdit(str(a.get("manufacturer", "")))
-        self.edModel = LineEdit(str(a.get("model", "")))
-        self.edInventory = LineEdit(str(a.get("inventory_no", "")))
-        self.edIp = LineEdit(str(a.get("ip", "")))
+        self.edSerial = LineEdit(None)
+        self.edSerial.setText(str(a.get("serial", "")))
+        self.edManufacturer = LineEdit(None)
+        self.edManufacturer.setText(str(a.get("manufacturer", "")))
+        self.edModel = LineEdit(None)
+        self.edModel.setText(str(a.get("model", "")))
+        self.edInventory = LineEdit(None)
+        self.edInventory.setText(str(a.get("inventory_no", "")))
+        self.edIp = LineEdit(None)
+        self.edIp.setText(str(a.get("ip", "")))
         self.edIp.setPlaceholderText("10.0.0.1")
-        self.edMac = LineEdit(str(a.get("mac", "")))
+        self.edMac = LineEdit(None)
+        self.edMac.setText(str(a.get("mac", "")))
         self.edMac.setPlaceholderText("AA:BB:CC:DD:EE:FF")
         self.edNotes = TextEdit()
         self.edNotes.setText(str(a.get("notes", "")))
@@ -168,7 +176,8 @@ class AssetDialog(QDialog):
                            ("ram_type", "Тип ОЗУ"), ("disk_type", "Диск (тип)"),
                            ("disk_size", "Диск (объём)"), ("gpu", "Видеокарта"),
                            ("os_version", "ОС"), ("bios_serial", "Серийный № BIOS")):
-            ed = LineEdit(str(hw.get(key, "")))
+            ed = LineEdit(None)
+            ed.setText(str(hw.get(key, "")))
             self.hwEdits[key] = ed
             form.addRow(f"{label}:", ed)
         self.lblLastSeen = BodyLabel(f"Последние данные: {hw.get('last_seen') or 'нет'}")

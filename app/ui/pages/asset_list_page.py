@@ -138,7 +138,7 @@ class AssetListPage(QWidget):
     # ---------- импорт ----------
     def _show_import_menu(self) -> None:
         menu = RoundMenu(parent=self)
-        act_excel = Action(FluentIcon.EXCEL, "Импорт из Excel / CSV…")
+        act_excel = Action(FluentIcon.DOCUMENT, "Импорт из Excel / CSV…")
         act_excel.triggered.connect(self._import_excel)
         act_clip = Action(FluentIcon.PASTE, "Вставить из буфера обмена…")
         act_clip.triggered.connect(self._import_clipboard)
