@@ -1,0 +1,7 @@
+PyQt6
+PyQt-Fluent-Widgets
+pywin32
+wmi
+openpyxl
+pandas
+cryptography
