@@ -3,12 +3,8 @@
 
 Универсальна для всех категорий (Компьютеры, МФУ, Принтеры, …, Склад).
 """
+from app.utils.qt_compat import QApplication, QDesktopServices, QDialog, QHBoxLayout, QHeaderView, QSortFilterProxyModel, QUrl, QVBoxLayout, QWidget, Qt, pyqtSignal
 import os
-from PyQt6.QtCore import Qt, QSortFilterProxyModel, pyqtSignal, QUrl
-from PyQt6.QtGui import QDesktopServices
-from PyQt6.QtWidgets import (
-    QWidget, QDialog, QVBoxLayout, QHBoxLayout, QHeaderView, QApplication,
-)
 from qfluentwidgets import (
     TableView, PushButton, PrimaryPushButton, SearchLineEdit, FluentIcon,
     InfoBar, InfoBarPosition, ComboBox, RoundMenu, Action, MessageBox,
@@ -138,7 +134,7 @@ class AssetListPage(QWidget):
     # ---------- импорт ----------
     def _show_import_menu(self) -> None:
         menu = RoundMenu(parent=self)
-        act_excel = Action(FluentIcon.EXCEL, "Импорт из Excel / CSV…")
+        act_excel = Action(FluentIcon.DOCUMENT, "Импорт из Excel / CSV…")
         act_excel.triggered.connect(self._import_excel)
         act_clip = Action(FluentIcon.PASTE, "Вставить из буфера обмена…")
         act_clip.triggered.connect(self._import_clipboard)

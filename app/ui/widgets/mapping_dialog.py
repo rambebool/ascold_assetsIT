@@ -1,7 +1,6 @@
 # -*- coding: utf-8 -*-
 """Диалог маппинга колонок источника → поля программы, с предпросмотром и ProgressBar."""
-from PyQt6.QtCore import Qt, pyqtSignal
-from PyQt6.QtWidgets import QWidget, QHBoxLayout, QVBoxLayout, QHeaderView, QTableWidgetItem
+from app.utils.qt_compat import QHBoxLayout, QHeaderView, QTableWidgetItem, QVBoxLayout, QWidget, Qt, pyqtSignal
 from qfluentwidgets import (
     MaskDialogBase, ComboBox, TableWidget, PushButton, PrimaryPushButton,
     ProgressBar, BodyLabel, FluentIcon, InfoBar, InfoBarPosition, LineEdit,

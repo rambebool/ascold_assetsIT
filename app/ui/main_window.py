@@ -7,7 +7,7 @@
   Импорт/Экспорт
   Настройки
 """
-from PyQt6.QtGui import QFont
+from app.utils.qt_compat import QFont
 from qfluentwidgets import (
     FluentWindow, FluentIcon, InfoBarPosition,
     setTheme, Theme, InfoBar,
@@ -62,7 +62,7 @@ class MainWindow(FluentWindow):
         n = self.navigationInterface
         n.setExpandWidth(240)
 
-        item_computers = n.addSubInterface(self.pageComputers, _icon("PC"), "Компьютеры")
+        item_computers = n.addSubInterface(self.pageComputers, _icon("DEVELOPER_TOOLS", "PC"), "Компьютеры")
         n.addSubInterface(self.pageMfp, _icon("PRINT"), "Сетевые МФУ")
         n.addSubInterface(self.pagePrinters, _icon("PRINT", "FOLDER"), "Принтеры")
         n.addSubInterface(self.pagePhones, _icon("PHONE", "CELL_PHONE"), "Телефоны")

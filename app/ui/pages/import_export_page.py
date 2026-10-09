@@ -1,7 +1,6 @@
 # -*- coding: utf-8 -*-
 """Страница «Импорт/Экспорт»: все способы загрузки и выгрузки данных в одном месте."""
-from PyQt6.QtCore import Qt, pyqtSignal
-from PyQt6.QtWidgets import QWidget, QVBoxLayout, QHBoxLayout, QGridLayout, QApplication
+from app.utils.qt_compat import QApplication, QGridLayout, QHBoxLayout, QVBoxLayout, QWidget, Qt, pyqtSignal
 from qfluentwidgets import (
     CardWidget, IconWidget, SubtitleLabel, BodyLabel, StrongBodyLabel,
     PrimaryPushButton, PushButton, FluentIcon, InfoBar, InfoBarPosition,
@@ -66,7 +65,7 @@ class ImportExportPage(QWidget):
 
     def _card_import_excel(self) -> CardWidget:
         card, v = self._card_base(
-            FluentIcon.EXCEL, "Импорт из Excel / CSV",
+            FluentIcon.DOCUMENT, "Импорт из Excel / CSV",
             "Файлы .xlsx, .xls, .csv. Диалог маппинга колонок с автоопределением "
             "и предпросмотром первых 10 строк.")
         btn = PrimaryPushButton(FluentIcon.FOLDER_ADD, "Импорт из Excel…")
@@ -84,7 +83,7 @@ class ImportExportPage(QWidget):
         self.clipEdit.setMaximumHeight(120)
         v.addWidget(self.clipEdit)
         row = QHBoxLayout()
-        btnPaste = PushButton(FluentIcon.CLIPBOARD, "Взять из буфера")
+        btnPaste = PushButton(FluentIcon.PASTE, "Взять из буфера")
         btnPaste.clicked.connect(lambda: self.clipEdit.setPlainText(
             QApplication.clipboard().text()))
         btnRec = PrimaryPushButton(FluentIcon.ZOOM, "Распознать и импортировать")
@@ -121,7 +120,7 @@ class ImportExportPage(QWidget):
             self.cbExpType.addItem(label, userData=code)
         v.addWidget(self.cbExpType)
         row = QHBoxLayout()
-        b1 = PushButton(FluentIcon.EXCEL, "Excel")
+        b1 = PushButton(FluentIcon.DOCUMENT, "Excel")
         b1.clicked.connect(lambda: self._export("excel"))
         b2 = PushButton(FluentIcon.FOLDER, "CSV")
         b2.clicked.connect(lambda: self._export("csv"))

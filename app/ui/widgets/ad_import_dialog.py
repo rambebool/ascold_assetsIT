@@ -3,8 +3,7 @@
 
 Список компьютеров домена с CheckBox'ами → выбор → импорт выбранных в БД.
 """
-from PyQt6.QtCore import Qt, pyqtSignal, QThread, QObject
-from PyQt6.QtWidgets import QDialog, QVBoxLayout, QHBoxLayout, QListWidgetItem
+from app.utils.qt_compat import QDialog, QHBoxLayout, QListWidgetItem, QObject, QThread, QVBoxLayout, Qt, pyqtSignal
 from qfluentwidgets import (
     ListWidget, PushButton, PrimaryPushButton, FluentIcon, BodyLabel,
     ProgressBar, InfoBar, InfoBarPosition, SearchLineEdit, SubtitleLabel,
